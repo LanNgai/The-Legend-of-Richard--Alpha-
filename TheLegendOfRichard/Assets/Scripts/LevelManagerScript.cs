@@ -2,46 +2,44 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using Unity.VisualScripting;
-using UnityEditor.Search;
 using UnityEngine;
+
+
+//This Script is responsible for spawning enemies and keeping track of when they die. 
+//It is also responsible for handling the win and lose events in the event of all enemies being killed or the player being killed.
 
 public class LevelManagerScript : MonoBehaviour
 {
     [SerializeField] List<GameObject> enemies;
-    [SerializeField] List<GameObject> currentEnemies;
     [SerializeField] Vector3[] spawnPoints;
     [SerializeField] int totalNumberOfEnemies;
-    [SerializeField] GameObject player;
+    GameObject player;
+    List<GameObject> currentEnemies;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        //start spawning enemies and keep track of how many are alive
         if(player == null){
-            // //try get player until player is not null
-            // while(player == null){
+                //get reference to player
                 player = GameObject.FindWithTag("Player");
-            //}
         }
         StartCoroutine(SpawnEnemies());
     }
 
     IEnumerator SpawnEnemies()
     {
-        for (int i = 0; i <= totalNumberOfEnemies; i++) //
+        for (int i = 0; i >= totalNumberOfEnemies; i++) //
         {
             //choose a random spawn point
             int randomIndex = UnityEngine.Random.Range(0, spawnPoints.Length);
             Vector3 spawnPoint = spawnPoints[randomIndex];
             
-            //create an enemy at the chosen spawn point
+            //create an enemy at the chosen spawn point and add to list of current enemies
             GameObject enemy = Instantiate(enemies[UnityEngine.Random.Range(0, enemies.Count)], spawnPoint, Quaternion.identity);
-            //add enemy to list of current enemies 
             currentEnemies.Append(enemy);
             
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(1f); //wait 1 second
         }
         
         //all enemies have been spawned, finish Coroutine 
@@ -64,7 +62,7 @@ public class LevelManagerScript : MonoBehaviour
 
     public void PlayerDied()
     {
-        //Player died, Game Over State
+        //Player died, lose State
         Debug.Log("Player died!");
         //stop spawning enemies
         StopCoroutine(SpawnEnemies());
