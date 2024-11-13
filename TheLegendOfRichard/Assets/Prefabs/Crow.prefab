@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8490505155424598922}
   - component: {fileID: 5507452768150783556}
   - component: {fileID: 3600082674715428161}
+  - component: {fileID: -329547589803097260}
   m_Layer: 0
   m_Name: Crow
   m_TagString: Enemy
@@ -133,3 +134,16 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &-329547589803097260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1563210486490320916}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 597545fd9eaa3df4a80b779c1dd8de18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 5

@@ -18,14 +18,14 @@ public class EnemyScript : MonoBehaviour
     {
         player = GameObject.Find("Player");
         Vector3 lookDirection = (player.transform.position - transform.position).normalized;
-        enemyRb.AddForce(lookDirection * speed * Time.deltaTime);
+        enemyRb.transform.Translate(lookDirection * speed * Time.deltaTime);
     }
     
     //TODO: name of player projectile
     private void OnCollisionEnter(Collision other)
     {
-        // If enemy collides with either goal, destroy it
-        if (other.gameObject.name == "Hairball")
+        // If enemy gets hit by HairBall it will be destroyed
+        if (other.gameObject.name == "HairBall")
         {
             Destroy(gameObject);
         } 
