@@ -14,7 +14,7 @@ public class LevelManagerScript : MonoBehaviour
     [SerializeField] Vector3[] spawnPoints;
     [SerializeField] int totalNumberOfEnemies;
     GameObject player;
-    List<GameObject> currentEnemies;
+    List<GameObject> currentEnemies = new List<GameObject>{};
 
 
     // Start is called before the first frame update
@@ -29,7 +29,7 @@ public class LevelManagerScript : MonoBehaviour
 
     IEnumerator SpawnEnemies()
     {
-        for (int i = 0; i >= totalNumberOfEnemies; i++) //
+        for (int i = 0; i < totalNumberOfEnemies; i++) //
         {
             //choose a random spawn point
             int randomIndex = UnityEngine.Random.Range(0, spawnPoints.Length);
@@ -38,6 +38,7 @@ public class LevelManagerScript : MonoBehaviour
             //create an enemy at the chosen spawn point and add to list of current enemies
             GameObject enemy = Instantiate(enemies[UnityEngine.Random.Range(0, enemies.Count)], spawnPoint, Quaternion.identity);
             currentEnemies.Append(enemy);
+            Debug.Log(currentEnemies);
             
             yield return new WaitForSeconds(1f); //wait 1 second
         }
