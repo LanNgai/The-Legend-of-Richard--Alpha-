@@ -23,7 +23,7 @@ public class HealthAndDamageScript : MonoBehaviour
         
         if(health <= 0){
 
-            if(gameObject.tag == "enemy" || gameObject.tag == "EnemyTrash"){
+            if(gameObject.tag == "enemy"){
                 //if is enemy, call LevelManager enemy died method 
                 levelManager.EnemyDied(this.gameObject);
             }
