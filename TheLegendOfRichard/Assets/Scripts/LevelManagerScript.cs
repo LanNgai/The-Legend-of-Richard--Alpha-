@@ -37,8 +37,8 @@ public class LevelManagerScript : MonoBehaviour
             
             //create an enemy at the chosen spawn point and add to list of current enemies
             GameObject enemy = Instantiate(enemies[UnityEngine.Random.Range(0, enemies.Count)], spawnPoint, Quaternion.identity);
-            currentEnemies.Append(enemy);
-            Debug.Log(currentEnemies);
+            currentEnemies.Add(enemy);
+            Debug.Log("Current Enemies: " + currentEnemies.Count);
             
             yield return new WaitForSeconds(1f); //wait 1 second
         }
@@ -51,7 +51,7 @@ public class LevelManagerScript : MonoBehaviour
     {
         //remove enemy from list of current enemies
         currentEnemies.Remove(enemy);
-        
+        Debug.Log("Current Enemies: " + currentEnemies.Count);
         //check if all enemies are dead
         if (currentEnemies.Count == 0)
         {
