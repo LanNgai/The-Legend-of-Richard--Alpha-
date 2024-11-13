@@ -28,19 +28,18 @@ public class PlayerMovement : MonoBehaviour
 
         transform.Translate(movementDirection * Time.deltaTime * speed, Space.World);
 
+        //rotate player according to the direction the player is moving
         if (movementDirection != Vector3.zero)
         {
             Quaternion toRotation = Quaternion.LookRotation(movementDirection, Vector3.up);
             transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
         }
 
-        // On spacebar press, if enough time has passed since last fire, shoot hairball
+        // On spacebar press, if enough time has passed since last fire, shoot hairball in the direction the player is facing
         if (Input.GetKeyDown(KeyCode.Space) && Time.time > nextFire)
         {
             nextFire = Time.time + fireRate;// reset nextFire to current time + fireRate
-
             Vector3 projectileSpawnPosition = transform.position + transform.forward;
-
             Instantiate(projectilePrefab, projectileSpawnPosition, transform.rotation);
         }
     }
