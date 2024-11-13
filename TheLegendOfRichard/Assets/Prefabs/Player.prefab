@@ -123,7 +123,7 @@ MonoBehaviour:
   projectilePrefab: {fileID: 1496629727672491369, guid: 01d466c1f6353a34fb7649598f4528ff, type: 3}
   horizontalInput: 0
   verticalInput: 0
-  speed: 5
+  speed: 10
   rotationSpeed: 720
 --- !u!114 &-1597553085905255073
 MonoBehaviour:

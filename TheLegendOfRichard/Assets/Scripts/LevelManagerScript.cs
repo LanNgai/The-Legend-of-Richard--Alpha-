@@ -18,7 +18,7 @@ public class LevelManagerScript : MonoBehaviour
 
 
     // Start is called before the first frame update
-    void Start()
+    public void Start()
     {
         if(player == null){
                 //get reference to player
