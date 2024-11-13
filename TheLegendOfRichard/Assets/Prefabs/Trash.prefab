@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6059026665867906163}
   - component: {fileID: 1373047671773411396}
   - component: {fileID: 6066350732726063544}
+  - component: {fileID: 6221858578315374366}
   m_Layer: 0
   m_Name: Trash
   m_TagString: EnemyTrash
@@ -153,5 +154,18 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 80
   m_CollisionDetection: 0
+--- !u!114 &6221858578315374366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8111969292562095049}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 597545fd9eaa3df4a80b779c1dd8de18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1000
