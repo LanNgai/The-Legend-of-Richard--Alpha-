@@ -93,7 +93,7 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4458565881803224654}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 3db44f043e9f87b45bf180ea3c083039, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -148,4 +148,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 597545fd9eaa3df4a80b779c1dd8de18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< Updated upstream
   speed: 15
+=======
+<<<<<<< HEAD
+  speed: 10
+=======
+  speed: 15
+>>>>>>> d94c61fc9e5bcb15a686df9ef9609da744e707e8
+>>>>>>> Stashed changes
