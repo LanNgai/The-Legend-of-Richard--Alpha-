@@ -157,11 +157,6 @@ MonoBehaviour:
   - {fileID: 8111969292562095049, guid: b00ffb7fcbaf8db49acd0cbd1c1ca893, type: 3}
   spawnPoints:
   - {x: 18.5, y: 8, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
   totalNumberOfEnemies: 3
 --- !u!4 &39878820
 Transform:
@@ -890,10 +885,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Crow
       objectReference: {fileID: 0}
-    - target: {fileID: 5507452768150783556, guid: 4bdbc877ee866e14f9b390f7b6cf16c7, type: 3}
-      propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -970,7 +961,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 104795640358991163, guid: 3f56c67531e329f40b23afd8b553481e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.9350243
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 104795640358991163, guid: 3f56c67531e329f40b23afd8b553481e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1004,13 +995,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 800390151143893655, guid: 3f56c67531e329f40b23afd8b553481e, type: 3}
+      propertyPath: m_Constraints
+      value: 80
+      objectReference: {fileID: 0}
     - target: {fileID: 4458565881803224654, guid: 3f56c67531e329f40b23afd8b553481e, type: 3}
       propertyPath: m_Name
       value: Seagull
-      objectReference: {fileID: 0}
-    - target: {fileID: 6292275556164260851, guid: 3f56c67531e329f40b23afd8b553481e, type: 3}
-      propertyPath: m_IsTrigger
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
