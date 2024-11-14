@@ -1,16 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Hairball : MonoBehaviour
 {
     public float speed = 40;
-    public int damageAmount = 20;
-    public float time = 2f;
+    public int damageAmount;
     // Start is called before the first frame update
     void Start()
     {
-        Destroy(gameObject, time);
+        
     }
 
     // Update is called once per frame
@@ -20,14 +17,14 @@ public class Hairball : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        HealthAndDamageScript healthAndDamageScript = GetComponent<HealthAndDamageScript>();
+        HealthAndDamageScript healthAndDamageScript = other.gameObject.GetComponent<HealthAndDamageScript>();
         
         if (healthAndDamageScript != null)
         {
             //make enemy take damage
-            healthAndDamageScript.Damage(damageAmount);
+            healthAndDamageScript.Damage(damageAmount, this.gameObject);
             //destroy projectile upon hitting enemy
-            Destroy(gameObject);
         }
+            Destroy(gameObject);
     }
 }

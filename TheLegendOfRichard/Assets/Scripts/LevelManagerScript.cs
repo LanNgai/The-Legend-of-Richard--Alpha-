@@ -65,6 +65,11 @@ public class LevelManagerScript : MonoBehaviour
     {
         //Player died, lose State
         Debug.Log("Player died!");
+        foreach (GameObject enemy in currentEnemies)
+        {
+            //stop all enemies
+            enemy.GetComponent<EnemyScript>().enabled = false;   
+        }
         //stop spawning enemies
         StopCoroutine(SpawnEnemies());
     }

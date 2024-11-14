@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5507452768150783556}
   - component: {fileID: 3600082674715428161}
   - component: {fileID: 2812408572071631853}
+  - component: {fileID: 7890451386358926998}
   m_Layer: 0
   m_Name: Crow
   m_TagString: Enemy
@@ -30,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 1563210486490320916}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 41.7, y: 4.9350243, z: -3.1002023}
+  m_LocalPosition: {x: 0, y: 0, z: -3.1000202}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -146,4 +147,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 597545fd9eaa3df4a80b779c1dd8de18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1000
+  speed: 15
+  hurtbox: {fileID: 7890451386358926998}
+--- !u!65 &7890451386358926998
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1563210486490320916}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 1}
