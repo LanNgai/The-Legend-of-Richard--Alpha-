@@ -107,6 +107,9 @@ public class LevelManagerScript : MonoBehaviour
             GameObject enemy = Instantiate(enemies[i], spawnPoint, Quaternion.identity);
             currentEnemies.Add(enemy);
             Debug.Log(currentEnemies.Count);
+            if((i + 1) == totalNumberOfEnemies){
+                break;
+            }
             //wait for between 2 and 3 seconds
             yield return new WaitForSeconds(Random.Range(2f, 3f));
         }

@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 4904802597680853546}
   - component: {fileID: 1386177954553462556}
   - component: {fileID: 5464864829277580977}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Seagull
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -150,7 +150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 597545fd9eaa3df4a80b779c1dd8de18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 8
+  speed: 12
   hurtbox: {fileID: 5464864829277580977}
 --- !u!114 &1386177954553462556
 MonoBehaviour:
