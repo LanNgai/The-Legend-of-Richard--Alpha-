@@ -9,15 +9,16 @@ using UnityEngine.SceneManagement;
 
 public class LevelManagerScript : MonoBehaviour
 {
+    [Header("Enemy Spawn Settings")]
     [SerializeField] List<GameObject> enemies;
     [SerializeField] Vector3[] spawnPoints;
-    [SerializeField] int totalNumberOfEnemies;
+
+    [Header("Menu Scenes")]
     [SerializeField] GameObject levelWinScreen;
     [SerializeField] GameObject levelLoseScreen;
     [SerializeField] GameObject levelMainMenu;
     GameObject player;
     List<GameObject> currentEnemies = new List<GameObject>{};
-
     bool allEnemiesSpawned;
 
 
@@ -95,6 +96,7 @@ public class LevelManagerScript : MonoBehaviour
     {
         //wait for 3 seconds before spawning enemies
         yield return new WaitForSeconds(3f);
+        int totalNumberOfEnemies = enemies.Count;
         for (int i = 0; i < totalNumberOfEnemies; i++) //
         {
             //choose a random spawn point
@@ -102,7 +104,7 @@ public class LevelManagerScript : MonoBehaviour
             Vector3 spawnPoint = spawnPoints[randomIndex];
             
             //create an enemy at the chosen spawn point and add to list of current enemies
-            GameObject enemy = Instantiate(enemies[Random.Range(0, enemies.Count)], spawnPoint, Quaternion.identity);
+            GameObject enemy = Instantiate(enemies[i], spawnPoint, Quaternion.identity);
             currentEnemies.Add(enemy);
             Debug.Log(currentEnemies.Count);
             //wait for between 2 and 3 seconds
