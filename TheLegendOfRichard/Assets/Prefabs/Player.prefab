@@ -122,10 +122,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 1496629727672491369, guid: 01d466c1f6353a34fb7649598f4528ff, type: 3}
-  horizontalInput: 0
-  verticalInput: 0
   speed: 10
-  rotationSpeed: 200
 --- !u!114 &-1597553085905255073
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -138,7 +135,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1959e34af356a3488c39d2cbd2dde8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 0
+  health: 3
 --- !u!54 &6784821790386151883
 Rigidbody:
   m_ObjectHideFlags: 0

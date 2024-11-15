@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 1373047671773411396}
   - component: {fileID: 6066350732726063544}
   - component: {fileID: 6221858578315374366}
+  - component: {fileID: 5282295144046022062}
   m_Layer: 0
   m_Name: Trash
   m_TagString: EnemyTrash
@@ -168,5 +169,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 597545fd9eaa3df4a80b779c1dd8de18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 15
+  speed: 8
   hurtbox: {fileID: 1373047671773411396}
+--- !u!114 &5282295144046022062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8111969292562095049}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1959e34af356a3488c39d2cbd2dde8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 1

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6292275556164260851}
   - component: {fileID: 800390151143893655}
   - component: {fileID: 4904802597680853546}
+  - component: {fileID: 1386177954553462556}
   - component: {fileID: 5464864829277580977}
   m_Layer: 0
   m_Name: Seagull
@@ -149,8 +150,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 597545fd9eaa3df4a80b779c1dd8de18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 15
+  speed: 8
   hurtbox: {fileID: 5464864829277580977}
+--- !u!114 &1386177954553462556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4458565881803224654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1959e34af356a3488c39d2cbd2dde8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 4
 --- !u!65 &5464864829277580977
 BoxCollider:
   m_ObjectHideFlags: 0
