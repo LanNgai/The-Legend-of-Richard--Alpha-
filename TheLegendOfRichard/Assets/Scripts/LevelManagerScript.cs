@@ -97,7 +97,7 @@ public class LevelManagerScript : MonoBehaviour
         //wait for 3 seconds before spawning enemies
         yield return new WaitForSeconds(3f);
         int totalNumberOfEnemies = enemies.Count;
-        for (int i = 0; i < totalNumberOfEnemies; i++) //
+        for (int i = 0; i <= totalNumberOfEnemies; i++) //
         {
             //choose a random spawn point
             int randomIndex = Random.Range(0, spawnPoints.Length);
