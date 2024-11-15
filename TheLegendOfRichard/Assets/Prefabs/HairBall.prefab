@@ -120,3 +120,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 40
   damageAmount: 1
+  time: 3
