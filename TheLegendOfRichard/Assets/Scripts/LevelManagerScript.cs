@@ -79,7 +79,7 @@ public class LevelManagerScript : MonoBehaviour
             //all enemies are dead, Win State
             Debug.Log("All enemies are dead!");
             player.GetComponent<PlayerMovement>().gameActive = false;
-            if(SceneManager.GetSceneByBuildIndex(SceneManager.GetActiveScene().buildIndex + 1) == null){
+            if(SceneManager.GetActiveScene().buildIndex + 1 == SceneManager.sceneCountInBuildSettings){
                 winScreen.SetActive(true);
             }
             else{
