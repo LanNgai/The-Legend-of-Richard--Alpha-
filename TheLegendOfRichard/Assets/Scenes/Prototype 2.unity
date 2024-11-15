@@ -348,6 +348,8 @@ MonoBehaviour:
   spawnPoints:
   - {x: 18.5, y: 4, z: 0}
   totalNumberOfEnemies: 3
+  levelWinScreen: {fileID: 1454703418}
+  levelLoseScreen: {fileID: 2104971586}
 --- !u!4 &39878820
 Transform:
   m_ObjectHideFlags: 0
@@ -752,7 +754,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_SendPointerHoverToParent: 1
+  m_SendPointerHoverToParent: 0
   m_HorizontalAxis: Horizontal
   m_VerticalAxis: Vertical
   m_SubmitButton: Submit
@@ -843,7 +845,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   titleScreen: {fileID: 64703915}
-  levelManager: {fileID: 0}
+  levelManager: {fileID: 39878819}
 --- !u!114 &207812336
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -887,7 +889,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 207812337}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 207812335}
+        m_TargetAssemblyTypeName: MainMenuScript, Assembly-CSharp
+        m_MethodName: GameStart
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &207812337
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1793,7 +1807,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 981912537}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 39878819}
+        m_TargetAssemblyTypeName: LevelManagerScript, Assembly-CSharp
+        m_MethodName: RestartLevel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &981912537
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2085,7 +2111,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1454703419
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2647,7 +2673,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2104971587
 RectTransform:
   m_ObjectHideFlags: 0

@@ -29,7 +29,7 @@ public class PlayerMovement : MonoBehaviour
         verticalInput = Input.GetAxis("Vertical");
         
         // Move the player based on the horizontal and vertical inputs
-        transform.rotation = Quaternion.identity;
+        transform.rotation = Quaternion.identity; //zeroing rotation before movement so that we dont move toward the mouse position
         transform.Translate(Vector3.forward * verticalInput * speed * Time.deltaTime);
         transform.Translate(Vector3.right * horizontalInput * speed * Time.deltaTime);
         
@@ -45,7 +45,7 @@ public class PlayerMovement : MonoBehaviour
         }
         
 
-        // On spacebar press, if enough time has passed since last fire, shoot hairball in the direction the player is facing
+        // On mouse press, if enough time has passed since last fire, shoot hairball in the direction the player is facing
         if (Input.GetKeyDown(KeyCode.Mouse0) && Time.time > nextFire)
         {
             nextFire = Time.time + fireRate;// reset nextFire to current time + fireRate
