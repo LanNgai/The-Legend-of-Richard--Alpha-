@@ -7,13 +7,14 @@ public class MainMenuScript : MonoBehaviour
 {
     private Button button;
     public GameObject titleScreen;
+    public LevelManagerScript levelManager;
 
     // Start is called before the first frame update
     void Start()
     {
     button = GetComponent<Button>();
-        button.onClick.AddListener(GameStart);
-        titleScreen.gameObject.SetActive(false);
+    button.onClick.AddListener(GameStart);
+    titleScreen.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
