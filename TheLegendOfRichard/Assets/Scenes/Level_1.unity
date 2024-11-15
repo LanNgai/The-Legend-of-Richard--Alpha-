@@ -344,10 +344,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemies:
   - {fileID: 8111969292562095049, guid: b00ffb7fcbaf8db49acd0cbd1c1ca893, type: 3}
+  - {fileID: 8111969292562095049, guid: b00ffb7fcbaf8db49acd0cbd1c1ca893, type: 3}
+  - {fileID: 8111969292562095049, guid: b00ffb7fcbaf8db49acd0cbd1c1ca893, type: 3}
+  - {fileID: 8111969292562095049, guid: b00ffb7fcbaf8db49acd0cbd1c1ca893, type: 3}
+  - {fileID: 8111969292562095049, guid: b00ffb7fcbaf8db49acd0cbd1c1ca893, type: 3}
+  - {fileID: 8111969292562095049, guid: b00ffb7fcbaf8db49acd0cbd1c1ca893, type: 3}
+  - {fileID: 8111969292562095049, guid: b00ffb7fcbaf8db49acd0cbd1c1ca893, type: 3}
+  - {fileID: 8111969292562095049, guid: b00ffb7fcbaf8db49acd0cbd1c1ca893, type: 3}
+  - {fileID: 8111969292562095049, guid: b00ffb7fcbaf8db49acd0cbd1c1ca893, type: 3}
+  - {fileID: 8111969292562095049, guid: b00ffb7fcbaf8db49acd0cbd1c1ca893, type: 3}
+  - {fileID: 1563210486490320916, guid: 4bdbc877ee866e14f9b390f7b6cf16c7, type: 3}
+  - {fileID: 1563210486490320916, guid: 4bdbc877ee866e14f9b390f7b6cf16c7, type: 3}
   spawnPoints:
   - {x: 18.5, y: 4, z: 0}
-  - {x: -16, y: 16, z: 0}
-  totalNumberOfEnemies: 11
+  - {x: -18.5, y: 4, z: 0}
   levelWinScreen: {fileID: 1454703418}
   levelLoseScreen: {fileID: 2104971586}
   levelMainMenu: {fileID: 64703915}
@@ -360,7 +370,7 @@ Transform:
   m_GameObject: {fileID: 39878818}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -16, y: 4.9350243, z: -5.5}
+  m_LocalPosition: {x: -17.9, y: 4, z: -7.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
