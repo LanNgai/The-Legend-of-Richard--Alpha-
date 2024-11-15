@@ -16,6 +16,7 @@ public class LevelManagerScript : MonoBehaviour
     [SerializeField] int totalNumberOfEnemies;
     [SerializeField] GameObject levelWinScreen;
     [SerializeField] GameObject levelLoseScreen;
+    [SerializeField] GameObject levelMainMenu;
     GameObject player;
     List<GameObject> currentEnemies = new List<GameObject>{};
 
@@ -27,12 +28,18 @@ public class LevelManagerScript : MonoBehaviour
                 //get reference to player
                 player = GameObject.FindWithTag("Player");
         }
+        levelWinScreen.SetActive(false);
+        levelLoseScreen.SetActive(false);
+        if(SceneManager.GetActiveScene().buildIndex != 0){
+            //if not in first scene, hide mainmenu and start spawning enemies immediately 
+            StartGame();
+        }
         
     }
 
     public void StartGame(){
-        //delay start of coroutine
-
+        levelMainMenu.SetActive(false); 
+        player.GetComponent<PlayerMovement>().gameActive = true;
         StartCoroutine(SpawnEnemies());
     }
 
@@ -57,6 +64,7 @@ public class LevelManagerScript : MonoBehaviour
 
             //all enemies are dead, Win State
             Debug.Log("All enemies are dead!");
+            player.GetComponent<PlayerMovement>().gameActive = false;
             levelWinScreen.SetActive(true); 
             //after delay open next level 
         }
