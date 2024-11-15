@@ -14,9 +14,12 @@ public class LevelManagerScript : MonoBehaviour
     [SerializeField] Vector3[] spawnPoints;
 
     [Header("Menu Scenes")]
-    [SerializeField] GameObject levelWinScreen;
-    [SerializeField] GameObject levelLoseScreen;
+    [SerializeField] GameObject nextLevelScreen;
+    [SerializeField] GameObject loseScreen;
+    [SerializeField] GameObject winScreen;
     [SerializeField] GameObject levelMainMenu;
+
+    
     GameObject player;
     List<GameObject> currentEnemies = new List<GameObject>{};
     bool allEnemiesSpawned;
@@ -30,8 +33,9 @@ public class LevelManagerScript : MonoBehaviour
                 //get reference to player
                 player = GameObject.FindWithTag("Player");
         }
-        levelWinScreen.SetActive(false);
-        levelLoseScreen.SetActive(false);
+        nextLevelScreen.SetActive(false);
+        loseScreen.SetActive(false);
+        winScreen.SetActive(false);
         if(SceneManager.GetActiveScene().buildIndex != 0){
             //if not in first scene, hide mainmenu and start spawning enemies immediately 
             StartGame();
@@ -57,6 +61,10 @@ public class LevelManagerScript : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
+    public void RestartGame(){
+        SceneManager.LoadScene(0);
+    }
+
 
     public void EnemyDied(GameObject enemy)
     {
@@ -71,7 +79,12 @@ public class LevelManagerScript : MonoBehaviour
             //all enemies are dead, Win State
             Debug.Log("All enemies are dead!");
             player.GetComponent<PlayerMovement>().gameActive = false;
-            levelWinScreen.SetActive(true); 
+            if(SceneManager.GetSceneByBuildIndex(SceneManager.GetActiveScene().buildIndex + 1) == null){
+                winScreen.SetActive(true);
+            }
+            else{
+                nextLevelScreen.SetActive(true); 
+            }
             //after delay open next level 
         }
 
@@ -89,7 +102,7 @@ public class LevelManagerScript : MonoBehaviour
         //stop spawning enemies
         StopCoroutine(SpawnEnemies());
         //show lose screen
-        levelLoseScreen.SetActive(true);
+        loseScreen.SetActive(true);
     }
 
     IEnumerator SpawnEnemies()
