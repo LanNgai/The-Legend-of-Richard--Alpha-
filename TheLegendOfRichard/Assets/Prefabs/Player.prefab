@@ -125,7 +125,7 @@ MonoBehaviour:
   horizontalInput: 0
   verticalInput: 0
   speed: 10
-  rotationSpeed: 720
+  rotationSpeed: 200
 --- !u!114 &-1597553085905255073
 MonoBehaviour:
   m_ObjectHideFlags: 0
