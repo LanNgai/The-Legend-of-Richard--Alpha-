@@ -1,7 +1,5 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -20,10 +18,13 @@ public class LevelManagerScript : MonoBehaviour
     GameObject player;
     List<GameObject> currentEnemies = new List<GameObject>{};
 
+    bool allEnemiesSpawned;
+
 
     // Start is called before the first frame update
     void Start()
     {
+        allEnemiesSpawned = false;
         if(player == null){
                 //get reference to player
                 player = GameObject.FindWithTag("Player");
@@ -33,6 +34,10 @@ public class LevelManagerScript : MonoBehaviour
         if(SceneManager.GetActiveScene().buildIndex != 0){
             //if not in first scene, hide mainmenu and start spawning enemies immediately 
             StartGame();
+        }
+        else {
+            //if in first scene, show main menu and wait for player to start
+            levelMainMenu.SetActive(true);
         }
         
     }
@@ -59,7 +64,7 @@ public class LevelManagerScript : MonoBehaviour
         Debug.Log(currentEnemies.Count);
         
         //check if all enemies are dead
-        if (currentEnemies.Count == 0)
+        if (currentEnemies.Count == 0 && allEnemiesSpawned)
         {
 
             //all enemies are dead, Win State
@@ -93,18 +98,18 @@ public class LevelManagerScript : MonoBehaviour
         for (int i = 0; i < totalNumberOfEnemies; i++) //
         {
             //choose a random spawn point
-            int randomIndex = UnityEngine.Random.Range(0, spawnPoints.Length);
+            int randomIndex = Random.Range(0, spawnPoints.Length);
             Vector3 spawnPoint = spawnPoints[randomIndex];
             
             //create an enemy at the chosen spawn point and add to list of current enemies
-            GameObject enemy = Instantiate(enemies[UnityEngine.Random.Range(0, enemies.Count)], spawnPoint, Quaternion.identity);
+            GameObject enemy = Instantiate(enemies[Random.Range(0, enemies.Count)], spawnPoint, Quaternion.identity);
             currentEnemies.Add(enemy);
             Debug.Log(currentEnemies.Count);
-            
-            yield return new WaitForSeconds(1f); //wait 1 second
+            //wait for between 2 and 3 seconds
+            yield return new WaitForSeconds(Random.Range(2f, 3f));
         }
-        
-        //all enemies have been spawned, finish Coroutine 
+        allEnemiesSpawned = true;
+        //all enemies have been spawned, finish Coroutine
         StopCoroutine(SpawnEnemies());
     }
 }
