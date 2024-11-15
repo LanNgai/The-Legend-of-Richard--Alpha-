@@ -18,14 +18,14 @@ public class HealthAndDamageScript : MonoBehaviour
     public void Damage(int damageReceived, GameObject damageDealer){
         health -= damageReceived;
         if(gameObject.tag == "Player"){
-            Debug.Log("Player damage received");
+            Debug.Log("Player damage received" + " Player Health: " + health);
             //if player is hit by enemy deal knockback in opposite direction from enemy position
             Vector3 knockbackDirection = (transform.position - damageDealer.transform.position).normalized;
             Rigidbody playerRb = gameObject.GetComponent<Rigidbody>();
             playerRb.AddForce(knockbackDirection * 20);
         }
         else if (gameObject.tag == "Enemy"){
-            Debug.Log("Enemy damage received");
+            Debug.Log("Enemy damage received" + " Enemy Health: " + health);
         }
         if(health <= 0){
 

@@ -299,9 +299,12 @@ MonoBehaviour:
   - {fileID: 1563210486490320916, guid: 4bdbc877ee866e14f9b390f7b6cf16c7, type: 3}
   - {fileID: 1563210486490320916, guid: 4bdbc877ee866e14f9b390f7b6cf16c7, type: 3}
   spawnPoints:
-  - {x: 18.5, y: 4, z: 0}
-  - {x: -18.5, y: 4, z: 0}
-  - {x: -18.5, y: 4, z: 0}
+  - {x: 45, y: 4, z: 50}
+  - {x: -45, y: 4, z: 10}
+  - {x: 45, y: 4, z: 10}
+  - {x: -45, y: 4, z: -50}
+  - {x: 45, y: 4, z: -50}
+  - {x: 45, y: 4, z: 50}
   levelWinScreen: {fileID: 1454703418}
   levelLoseScreen: {fileID: 2104971586}
   levelMainMenu: {fileID: 64703915}
